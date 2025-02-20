@@ -15,10 +15,4 @@ public class DataController : ControllerBase
     {
         var data = await _repository.GetAllAsync(); return Ok(data);
     }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id)
-    {
-        var data = await _repository.GetByIdAsync(id); return data != null ? Ok(data) : NotFound();
-    }
 }
